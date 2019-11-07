@@ -8,6 +8,7 @@
 
 #import "UISelectVC.h"
 #import "CollectionViewCell.h"
+#import "LabelVC.h"
 
 static NSString *kCollectionViewCell = @"kCollectionViewCell";
 
@@ -22,6 +23,9 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //防止导航栏push 或者 pop时 右上角出现黑色阴影
+    self.navigationController.navigationBar.translucent = false;
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 1;
     layout.minimumInteritemSpacing = 1;
@@ -29,8 +33,9 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
     [self.selectUIList setCollectionViewLayout:layout];
     self.selectUIList.delegate = self;
     self.selectUIList.dataSource = self;
+    self.selectUIList.alwaysBounceVertical = YES;
     
-    UINib *nib = [UINib nibWithNibName:kCollectionViewCell bundle:nil];
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([CollectionViewCell class]) bundle:nil];
     [self.selectUIList registerNib:nib forCellWithReuseIdentifier:kCollectionViewCell];
 }
 
@@ -51,7 +56,15 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGRect rect = [UIScreen mainScreen].bounds;
     
-    return CGSizeMake(rect.size.width * 0.5 - 3, rect.size.width * 0.5 - 3);
+    return CGSizeMake(rect.size.width * 0.5 - 1, rect.size.width * 0.5 - 1);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"GoLabelVC" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
 }
 
 //MARK: - LazyLoad
