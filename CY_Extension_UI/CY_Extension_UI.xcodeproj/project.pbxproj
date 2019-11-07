@@ -18,6 +18,8 @@
 		6CE812782373A17700123DD5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE812742372E64700123DD5 /* CollectionViewCell.xib */; };
 		6CE812812373FF3500123DD5 /* BillVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE812802373FF3500123DD5 /* BillVC.m */; };
 		6CE812842374104400123DD5 /* InputBillVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE812832374104400123DD5 /* InputBillVC.m */; };
+		6CE812882374340300123DD5 /* LeftTitleRightArrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE812862374340300123DD5 /* LeftTitleRightArrowCell.m */; };
+		6CE812892374340300123DD5 /* LeftTitleRightArrowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE812872374340300123DD5 /* LeftTitleRightArrowCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		6CE812802373FF3500123DD5 /* BillVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillVC.m; sourceTree = "<group>"; };
 		6CE812822374104400123DD5 /* InputBillVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputBillVC.h; sourceTree = "<group>"; };
 		6CE812832374104400123DD5 /* InputBillVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputBillVC.m; sourceTree = "<group>"; };
+		6CE812852374340300123DD5 /* LeftTitleRightArrowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftTitleRightArrowCell.h; sourceTree = "<group>"; };
+		6CE812862374340300123DD5 /* LeftTitleRightArrowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftTitleRightArrowCell.m; sourceTree = "<group>"; };
+		6CE812872374340300123DD5 /* LeftTitleRightArrowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftTitleRightArrowCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				6CE812722372E64700123DD5 /* CollectionViewCell.h */,
 				6CE812732372E64700123DD5 /* CollectionViewCell.m */,
 				6CE812742372E64700123DD5 /* CollectionViewCell.xib */,
+				6CE812852374340300123DD5 /* LeftTitleRightArrowCell.h */,
+				6CE812862374340300123DD5 /* LeftTitleRightArrowCell.m */,
+				6CE812872374340300123DD5 /* LeftTitleRightArrowCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE812782373A17700123DD5 /* CollectionViewCell.xib in Resources */,
+				6CE812892374340300123DD5 /* LeftTitleRightArrowCell.xib in Resources */,
 				6CE8123B237158E300123DD5 /* LaunchScreen.storyboard in Resources */,
 				6CE81238237158E300123DD5 /* Assets.xcassets in Resources */,
 				6CE81236237158DE00123DD5 /* Main.storyboard in Resources */,
@@ -207,6 +216,7 @@
 			files = (
 				6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */,
 				6CE812812373FF3500123DD5 /* BillVC.m in Sources */,
+				6CE812882374340300123DD5 /* LeftTitleRightArrowCell.m in Sources */,
 				6CE812752372E64700123DD5 /* CollectionViewCell.m in Sources */,
 				6CE812842374104400123DD5 /* InputBillVC.m in Sources */,
 				6CE8123E237158E300123DD5 /* main.m in Sources */,

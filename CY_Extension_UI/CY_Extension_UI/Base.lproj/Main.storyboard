@@ -58,21 +58,63 @@
             </objects>
             <point key="canvasLocation" x="-972.46376811594212" y="683.70535714285711"/>
         </scene>
-        <!--记账-->
+        <!--Input BillVC-->
         <scene sceneID="Xgc-4g-3MR">
             <objects>
                 <viewController id="bUF-tT-7Cy" customClass="InputBillVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jNu-z7-vZZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jPE-N1-NNX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KC6-7K-cy3">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HWp-Q4-2Hb">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="M4m-25-CEd">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jPE-N1-NNX" firstAttribute="leading" secondItem="rKE-9c-RDs" secondAttribute="leading" id="3nb-jW-hBB"/>
+                            <constraint firstItem="rKE-9c-RDs" firstAttribute="trailing" secondItem="jPE-N1-NNX" secondAttribute="trailing" id="5jW-M4-ONC"/>
+                            <constraint firstItem="jPE-N1-NNX" firstAttribute="top" secondItem="rKE-9c-RDs" secondAttribute="top" id="Ap2-Ul-IUq"/>
+                            <constraint firstItem="jPE-N1-NNX" firstAttribute="bottom" secondItem="rKE-9c-RDs" secondAttribute="bottom" constant="83" id="GQJ-IL-Nll"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rKE-9c-RDs"/>
                     </view>
-                    <navigationItem key="navigationItem" title="记账" id="HqZ-6Q-0nS"/>
+                    <navigationItem key="navigationItem" id="HqZ-6Q-0nS">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="oLi-vy-aDq">
+                            <rect key="frame" x="141.5" y="6" width="131" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="list" destination="jPE-N1-NNX" id="lCZ-m7-bN0"/>
+                        <outlet property="segmentType" destination="oLi-vy-aDq" id="Ahk-HK-TGj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8k-d5-N0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3236" y="2140"/>
+            <point key="canvasLocation" x="-3236.2318840579715" y="2139.5089285714284"/>
         </scene>
         <!--账单-->
         <scene sceneID="mll-rR-dco">
