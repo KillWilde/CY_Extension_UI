@@ -16,7 +16,8 @@
 		6CE8124823716EBA00123DD5 /* UISelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8124723716EBA00123DD5 /* UISelectVC.m */; };
 		6CE812752372E64700123DD5 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE812732372E64700123DD5 /* CollectionViewCell.m */; };
 		6CE812782373A17700123DD5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE812742372E64700123DD5 /* CollectionViewCell.xib */; };
-		6CE8127D2373C2CA00123DD5 /* LabelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8127C2373C2CA00123DD5 /* LabelVC.m */; };
+		6CE812812373FF3500123DD5 /* BillVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE812802373FF3500123DD5 /* BillVC.m */; };
+		6CE812842374104400123DD5 /* InputBillVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE812832374104400123DD5 /* InputBillVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +36,10 @@
 		6CE812722372E64700123DD5 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		6CE812732372E64700123DD5 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		6CE812742372E64700123DD5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		6CE8127B2373C2CA00123DD5 /* LabelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelVC.h; sourceTree = "<group>"; };
-		6CE8127C2373C2CA00123DD5 /* LabelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelVC.m; sourceTree = "<group>"; };
+		6CE8127F2373FF3500123DD5 /* BillVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BillVC.h; sourceTree = "<group>"; };
+		6CE812802373FF3500123DD5 /* BillVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillVC.m; sourceTree = "<group>"; };
+		6CE812822374104400123DD5 /* InputBillVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputBillVC.h; sourceTree = "<group>"; };
+		6CE812832374104400123DD5 /* InputBillVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputBillVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 		6CE8124423716E2800123DD5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6CE8127E2373FF0E00123DD5 /* KeepAccount */,
 				6CE8124523716E4A00123DD5 /* MainVC */,
 			);
 			path = ViewController;
@@ -97,8 +101,6 @@
 			children = (
 				6CE8124623716EBA00123DD5 /* UISelectVC.h */,
 				6CE8124723716EBA00123DD5 /* UISelectVC.m */,
-				6CE8127B2373C2CA00123DD5 /* LabelVC.h */,
-				6CE8127C2373C2CA00123DD5 /* LabelVC.m */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -119,6 +121,17 @@
 				6CE812742372E64700123DD5 /* CollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6CE8127E2373FF0E00123DD5 /* KeepAccount */ = {
+			isa = PBXGroup;
+			children = (
+				6CE8127F2373FF3500123DD5 /* BillVC.h */,
+				6CE812802373FF3500123DD5 /* BillVC.m */,
+				6CE812822374104400123DD5 /* InputBillVC.h */,
+				6CE812832374104400123DD5 /* InputBillVC.m */,
+			);
+			path = KeepAccount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */,
+				6CE812812373FF3500123DD5 /* BillVC.m in Sources */,
 				6CE812752372E64700123DD5 /* CollectionViewCell.m in Sources */,
+				6CE812842374104400123DD5 /* InputBillVC.m in Sources */,
 				6CE8123E237158E300123DD5 /* main.m in Sources */,
-				6CE8127D2373C2CA00123DD5 /* LabelVC.m in Sources */,
 				6CE8124823716EBA00123DD5 /* UISelectVC.m in Sources */,
 				6CE81230237158DE00123DD5 /* SceneDelegate.m in Sources */,
 			);

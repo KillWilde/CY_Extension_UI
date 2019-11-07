@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--UI选择-->
+        <!--功能菜单-->
         <scene sceneID="xry-FD-ZEX">
             <objects>
                 <viewController id="rKU-J5-bqL" customClass="UISelectVC" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <segue destination="VVq-JR-DIO" kind="show" identifier="GoLabelVC" id="kzn-5Q-dhR"/>
+                                            <segue destination="VVq-JR-DIO" kind="show" identifier="GoBillVC" id="kzn-5Q-dhR"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -49,7 +49,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jga-vF-omn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="UI选择" id="Ghj-bg-dCx"/>
+                    <navigationItem key="navigationItem" title="功能菜单" id="Ghj-bg-dCx"/>
                     <connections>
                         <outlet property="selectUIList" destination="gEy-GK-tw1" id="ZYe-9n-12F"/>
                     </connections>
@@ -58,37 +58,71 @@
             </objects>
             <point key="canvasLocation" x="-972.46376811594212" y="683.70535714285711"/>
         </scene>
-        <!--LabelVC-->
+        <!--记账-->
+        <scene sceneID="Xgc-4g-3MR">
+            <objects>
+                <viewController id="bUF-tT-7Cy" customClass="InputBillVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jNu-z7-vZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rKE-9c-RDs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="记账" id="HqZ-6Q-0nS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N8k-d5-N0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3236" y="2140"/>
+        </scene>
+        <!--账单-->
         <scene sceneID="mll-rR-dco">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="VVq-JR-DIO" customClass="LabelVC" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="VVq-JR-DIO" customClass="BillVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kId-A2-I9G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是一个普通的Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fX-Ci-6T5">
-                                <rect key="frame" x="103.5" y="433" width="207" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="oI8-7M-YvE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PeT-4A-lBJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.95422196061643838" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5PT-re-ExY">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pT4-3O-Qk4">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WbM-c5-0ua">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="bUF-tT-7Cy" kind="show" identifier="GoInputBillVC" id="XEI-lR-6Al"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8fX-Ci-6T5" firstAttribute="centerX" secondItem="kId-A2-I9G" secondAttribute="centerX" id="6Ad-ga-k67"/>
-                            <constraint firstItem="8fX-Ci-6T5" firstAttribute="centerY" secondItem="kId-A2-I9G" secondAttribute="centerY" id="Kwz-Yu-Ys5"/>
-                            <constraint firstItem="8fX-Ci-6T5" firstAttribute="width" secondItem="kId-A2-I9G" secondAttribute="width" multiplier="0.5" id="v5V-A5-XKb"/>
+                            <constraint firstItem="PeT-4A-lBJ" firstAttribute="top" secondItem="Jff-WW-Gb9" secondAttribute="top" id="FpY-g3-fTb"/>
+                            <constraint firstItem="PeT-4A-lBJ" firstAttribute="bottom" secondItem="Jff-WW-Gb9" secondAttribute="bottom" constant="34" id="GfN-gC-54U"/>
+                            <constraint firstItem="PeT-4A-lBJ" firstAttribute="leading" secondItem="Jff-WW-Gb9" secondAttribute="leading" id="LaD-Nu-JtA"/>
+                            <constraint firstItem="Jff-WW-Gb9" firstAttribute="trailing" secondItem="PeT-4A-lBJ" secondAttribute="trailing" id="rzK-f7-Ea7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jff-WW-Gb9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nob-lN-cwg"/>
+                    <navigationItem key="navigationItem" title="账单" id="a65-7O-Qxp"/>
+                    <connections>
+                        <outlet property="collectionList" destination="PeT-4A-lBJ" id="MJt-ad-6h7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPb-wW-uW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1741" y="1412"/>
+            <point key="canvasLocation" x="-2115.9420289855075" y="1408.2589285714284"/>
         </scene>
         <!--功能选择-->
         <scene sceneID="Fnv-cA-YfD">
@@ -140,7 +174,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jjd-PA-HBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="587" y="-13"/>
+            <point key="canvasLocation" x="810" y="-13"/>
         </scene>
         <!--动画效果-->
         <scene sceneID="NME-lr-ISi">
@@ -156,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rss-Cv-Dqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="587" y="668"/>
+            <point key="canvasLocation" x="810" y="684"/>
         </scene>
     </scenes>
     <resources>

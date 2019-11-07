@@ -1,41 +1,38 @@
 //
-//  UISelectVC.m
+//  BillVC.m
 //  CY_Extension_UI
 //
-//  Created by Megatron on 2019/11/5.
+//  Created by Megatron on 2019/11/7.
 //  Copyright © 2019 SaturdayNight. All rights reserved.
 //
 
-#import "UISelectVC.h"
+#import "BillVC.h"
 #import "CollectionViewCell.h"
 
 static NSString *kCollectionViewCell = @"kCollectionViewCell";
 
-@interface UISelectVC () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface BillVC () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
 
 @end
 
-@implementation UISelectVC
+@implementation BillVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //防止导航栏push 或者 pop时 右上角出现黑色阴影
-    self.navigationController.navigationBar.translucent = false;
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 1;
     layout.minimumInteritemSpacing = 0.5;
     
-    [self.selectUIList setCollectionViewLayout:layout];
-    self.selectUIList.delegate = self;
-    self.selectUIList.dataSource = self;
-    self.selectUIList.alwaysBounceVertical = YES;
+    [self.collectionList setCollectionViewLayout:layout];
+    self.collectionList.delegate = self;
+    self.collectionList.dataSource = self;
+    self.collectionList.alwaysBounceVertical = YES;
     
     UINib *nib = [UINib nibWithNibName:NSStringFromClass([CollectionViewCell class]) bundle:nil];
-    [self.selectUIList registerNib:nib forCellWithReuseIdentifier:kCollectionViewCell];
+    [self.collectionList registerNib:nib forCellWithReuseIdentifier:kCollectionViewCell];
 }
 
 //MARK: - Delegate
@@ -75,14 +72,9 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
 - (NSMutableArray *)dataSource{
     if (!_dataSource) {
         _dataSource = [NSMutableArray arrayWithCapacity:0];
-        [_dataSource addObject:@{@"name":@"账单",@"image":@"jizhang",@"segue":@"GoBillVC"}];
-        [_dataSource addObject:@{@"name":@"日记",@"image":@"riji"}];
-        [_dataSource addObject:@{@"name":@"计算器",@"image":@"jisuanqi"}];
-        [_dataSource addObject:@{@"name":@"照相机",@"image":@"zhaoxiangji"}];
-        [_dataSource addObject:@{@"name":@"二维码扫描",@"image":@"erweima"}];
-        [_dataSource addObject:@{@"name":@"手机相册",@"image":@"xiangce"}];
-        [_dataSource addObject:@{@"name":@"地图",@"image":@"ditu"}];
-        [_dataSource addObject:@{@"name":@"更多",@"image":@"gengduo"}];
+        [_dataSource addObject:@{@"name":@"记账",@"image":@"shouxiejizhang",@"segue":@"GoInputBillVC"}];
+        [_dataSource addObject:@{@"name":@"查账",@"image":@"chazhang"}];
+        [_dataSource addObject:@{@"name":@"智能管家",@"image":@"zhineng"}];
     }
     
     return _dataSource;
