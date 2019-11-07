@@ -90,11 +90,11 @@
             </objects>
             <point key="canvasLocation" x="-1741" y="1412"/>
         </scene>
-        <!--UI选择-->
+        <!--功能选择-->
         <scene sceneID="Fnv-cA-YfD">
             <objects>
                 <navigationController id="SWE-DJ-Apf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="UI选择" image="tray.2.fill" catalog="system" id="8t6-zP-2fZ"/>
+                    <tabBarItem key="tabBarItem" title="功能选择" image="tray.2.fill" catalog="system" id="8t6-zP-2fZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lkJ-Xs-cqS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

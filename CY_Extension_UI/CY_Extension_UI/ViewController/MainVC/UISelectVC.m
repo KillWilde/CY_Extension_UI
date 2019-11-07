@@ -49,6 +49,7 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
     
     NSDictionary *info = [self.dataSource objectAtIndex:indexPath.row];
     cell.lbName.text = [info objectForKey:@"name"];
+    cell.imgIcon.image = [UIImage imageNamed:[info objectForKey:@"image"]];
     
     return cell;
 }
@@ -56,7 +57,7 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGRect rect = [UIScreen mainScreen].bounds;
     
-    return CGSizeMake(rect.size.width * 0.5 - 1, rect.size.width * 0.5 - 1);
+    return CGSizeMake(rect.size.width / 3.0 - 2, rect.size.width / 3.0 - 2);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -71,9 +72,14 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
 - (NSMutableArray *)dataSource{
     if (!_dataSource) {
         _dataSource = [NSMutableArray arrayWithCapacity:0];
-        [_dataSource addObject:@{@"name":@"UILabel"}];
-        [_dataSource addObject:@{@"name":@"UIButton"}];
-        [_dataSource addObject:@{@"name":@"UISlider"}];
+        [_dataSource addObject:@{@"name":@"账单",@"image":@"jizhang"}];
+        [_dataSource addObject:@{@"name":@"日记",@"image":@"riji"}];
+        [_dataSource addObject:@{@"name":@"计算器",@"image":@"jisuanqi"}];
+        [_dataSource addObject:@{@"name":@"照相机",@"image":@"zhaoxiangji"}];
+        [_dataSource addObject:@{@"name":@"二维码扫描",@"image":@"erweima"}];
+        [_dataSource addObject:@{@"name":@"手机相册",@"image":@"xiangce"}];
+        [_dataSource addObject:@{@"name":@"地图",@"image":@"ditu"}];
+        [_dataSource addObject:@{@"name":@"更多",@"image":@"gengduo"}];
     }
     
     return _dataSource;
