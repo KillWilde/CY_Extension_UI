@@ -32,6 +32,9 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //导航栏配置
+    self.navigationItem.title = @"";
+    
     //添加导航栏右侧按钮
     UIButton *btnRight = [UIButton buttonWithType:UIButtonTypeSystem];
     btnRight.frame = CGRectMake(0, 0, 50, 30);
@@ -112,7 +115,7 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 - (NSMutableArray *)dataSource{
     if (!_dataSource) {
         _dataSource = [NSMutableArray arrayWithCapacity:0];
-        [_dataSource addObject:@{@"name":@"消费类型",@"data":@"午餐"}];
+        [_dataSource addObject:@{@"name":@"消费类型",@"data":@"午餐",@"segue":@"GoChoseTypeVC"}];
         [_dataSource addObject:@{@"name":@"日期",@"data":@"2019-10-31"}];
         [_dataSource addObject:@{@"name":@"金额",@"data":@"26.5"}];
         [_dataSource addObject:@{@"name":@"备注",@"data":@"一个人吃"}];

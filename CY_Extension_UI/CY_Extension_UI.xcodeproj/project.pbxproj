@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C9F03B5237664050077C817 /* ChoseTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03B4237664050077C817 /* ChoseTypeVC.m */; };
+		6C9F03B92376BA6C0077C817 /* CYDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03B82376BA6C0077C817 /* CYDatePicker.m */; };
 		6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8122C237158DE00123DD5 /* AppDelegate.m */; };
 		6CE81230237158DE00123DD5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8122F237158DE00123DD5 /* SceneDelegate.m */; };
 		6CE81236237158DE00123DD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE81234237158DE00123DD5 /* Main.storyboard */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C9F03B3237664050077C817 /* ChoseTypeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoseTypeVC.h; sourceTree = "<group>"; };
+		6C9F03B4237664050077C817 /* ChoseTypeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoseTypeVC.m; sourceTree = "<group>"; };
+		6C9F03B72376BA6C0077C817 /* CYDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYDatePicker.h; sourceTree = "<group>"; };
+		6C9F03B82376BA6C0077C817 /* CYDatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYDatePicker.m; sourceTree = "<group>"; };
 		6CE81228237158DE00123DD5 /* CY_Extension_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CY_Extension_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8122B237158DE00123DD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CE8122C237158DE00123DD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C9F03B62376B8F70077C817 /* ChoseView */ = {
+			isa = PBXGroup;
+			children = (
+				6C9F03B72376BA6C0077C817 /* CYDatePicker.h */,
+				6C9F03B82376BA6C0077C817 /* CYDatePicker.m */,
+			);
+			path = ChoseView;
+			sourceTree = "<group>";
+		};
 		6CE8121F237158DE00123DD5 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +128,7 @@
 		6CE812702372E62700123DD5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6C9F03B62376B8F70077C817 /* ChoseView */,
 				6CE812712372E62700123DD5 /* Cell */,
 			);
 			path = View;
@@ -138,6 +154,8 @@
 				6CE812802373FF3500123DD5 /* BillVC.m */,
 				6CE812822374104400123DD5 /* InputBillVC.h */,
 				6CE812832374104400123DD5 /* InputBillVC.m */,
+				6C9F03B3237664050077C817 /* ChoseTypeVC.h */,
+				6C9F03B4237664050077C817 /* ChoseTypeVC.m */,
 			);
 			path = KeepAccount;
 			sourceTree = "<group>";
@@ -215,11 +233,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */,
+				6C9F03B5237664050077C817 /* ChoseTypeVC.m in Sources */,
 				6CE812812373FF3500123DD5 /* BillVC.m in Sources */,
 				6CE812882374340300123DD5 /* LeftTitleRightArrowCell.m in Sources */,
 				6CE812752372E64700123DD5 /* CollectionViewCell.m in Sources */,
 				6CE812842374104400123DD5 /* InputBillVC.m in Sources */,
 				6CE8123E237158E300123DD5 /* main.m in Sources */,
+				6C9F03B92376BA6C0077C817 /* CYDatePicker.m in Sources */,
 				6CE8124823716EBA00123DD5 /* UISelectVC.m in Sources */,
 				6CE81230237158DE00123DD5 /* SceneDelegate.m in Sources */,
 			);
