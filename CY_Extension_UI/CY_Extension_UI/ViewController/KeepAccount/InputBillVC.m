@@ -8,12 +8,16 @@
 
 #import "InputBillVC.h"
 #import "LeftTitleRightArrowCell.h"
+#import "ChoseTypeVC.h"
+#import "CYDatePicker.h"
 
 static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 
 @interface InputBillVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
+
+@property (nonatomic,strong) CYDatePicker *datePicker;
 
 @end
 
@@ -91,6 +95,16 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *name = [[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"name"];
+    if ([name isEqualToString:@"日期"]) {
+        [self.datePicker showInView:self.view];
+        [self.datePicker listenChoseDateAction:^(NSString * _Nullable date) {
+            [self changeName:@"日期" data:date];
+            [self.list reloadData];
+        }];
+        return;
+    }
+    
     NSString *strSegue = [[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"segue"];
 
     if (strSegue) {
@@ -99,7 +113,25 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    if ([segue.identifier isEqualToString:@"GoChoseTypeVC"]) {
+        ChoseTypeVC *vc = segue.destinationViewController;
+        [vc listenChoseType:^(NSString * _Nullable type) {
+            [self changeName:@"消费类型" data:type];
+            [self.list reloadData];
+        }];
+    }
+}
+
+- (void)changeName:(NSString *)name data:(NSString *)data{
+    for (int i = 0; i < self.dataSource.count; i ++) {
+        NSMutableDictionary *dic = [[self.dataSource objectAtIndex:i] mutableCopy];
+        NSString *dName = [dic objectForKey:@"name"];
+        if ([name isEqualToString:dName]) {
+            [dic setObject:data forKey:@"data"];
+            [self.dataSource replaceObjectAtIndex:i withObject:dic];
+            break;
+        }
+    }
 }
 
 //MARK: - 导航栏右侧按钮点击
@@ -122,6 +154,14 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
     }
     
     return _dataSource;
+}
+
+-(CYDatePicker *)datePicker{
+    if (!_datePicker) {
+        _datePicker = [[CYDatePicker alloc] init];
+    }
+    
+    return _datePicker;
 }
 
 @end

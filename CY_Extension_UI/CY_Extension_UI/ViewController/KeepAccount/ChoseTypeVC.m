@@ -8,15 +8,12 @@
 
 #import "ChoseTypeVC.h"
 #import "CollectionViewCell.h"
-#import "CYDatePicker.h"
 
 static NSString *kCollectionViewCell = @"kCollectionViewCell";
 
 @interface ChoseTypeVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
-
-@property (nonatomic,strong) CYDatePicker *datePicker;
 
 @end
 
@@ -60,17 +57,28 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *type = [[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"name"];
+    if (self.backAction) {
+        self.backAction(type);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    return;
     NSString *strSegue = [[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"segue"];
 
     if (strSegue) {
         [self performSegueWithIdentifier:strSegue sender:nil];
     }
-    
-    [self.datePicker showInView:self.view];
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+}
+
+//MARK: - LazyLoad
+- (void)listenChoseType:(VCBackAction)action{
+    self.backAction = action;
 }
 
 //MARK: - LazyLoad
@@ -88,14 +96,6 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
     }
     
     return _dataSource;
-}
-
--(CYDatePicker *)datePicker{
-    if (!_datePicker) {
-        _datePicker = [[CYDatePicker alloc] init];
-    }
-    
-    return _datePicker;
 }
 
 @end

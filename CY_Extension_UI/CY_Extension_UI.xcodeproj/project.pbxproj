@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C9F03B5237664050077C817 /* ChoseTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03B4237664050077C817 /* ChoseTypeVC.m */; };
 		6C9F03B92376BA6C0077C817 /* CYDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03B82376BA6C0077C817 /* CYDatePicker.m */; };
+		6C9F03BD237928030077C817 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03BC237928030077C817 /* NSDate+Extension.m */; };
 		6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8122C237158DE00123DD5 /* AppDelegate.m */; };
 		6CE81230237158DE00123DD5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8122F237158DE00123DD5 /* SceneDelegate.m */; };
 		6CE81236237158DE00123DD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE81234237158DE00123DD5 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 		6C9F03B4237664050077C817 /* ChoseTypeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoseTypeVC.m; sourceTree = "<group>"; };
 		6C9F03B72376BA6C0077C817 /* CYDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYDatePicker.h; sourceTree = "<group>"; };
 		6C9F03B82376BA6C0077C817 /* CYDatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYDatePicker.m; sourceTree = "<group>"; };
+		6C9F03BB237928030077C817 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		6C9F03BC237928030077C817 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		6CE81228237158DE00123DD5 /* CY_Extension_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CY_Extension_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8122B237158DE00123DD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CE8122C237158DE00123DD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +76,15 @@
 			path = ChoseView;
 			sourceTree = "<group>";
 		};
+		6C9F03BA23790C420077C817 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6C9F03BB237928030077C817 /* NSDate+Extension.h */,
+				6C9F03BC237928030077C817 /* NSDate+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		6CE8121F237158DE00123DD5 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +108,7 @@
 				6CE8122C237158DE00123DD5 /* AppDelegate.m */,
 				6CE8122E237158DE00123DD5 /* SceneDelegate.h */,
 				6CE8122F237158DE00123DD5 /* SceneDelegate.m */,
+				6C9F03BA23790C420077C817 /* Category */,
 				6CE812702372E62700123DD5 /* View */,
 				6CE8124423716E2800123DD5 /* ViewController */,
 				6CE81234237158DE00123DD5 /* Main.storyboard */,
@@ -234,6 +247,7 @@
 			files = (
 				6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */,
 				6C9F03B5237664050077C817 /* ChoseTypeVC.m in Sources */,
+				6C9F03BD237928030077C817 /* NSDate+Extension.m in Sources */,
 				6CE812812373FF3500123DD5 /* BillVC.m in Sources */,
 				6CE812882374340300123DD5 /* LeftTitleRightArrowCell.m in Sources */,
 				6CE812752372E64700123DD5 /* CollectionViewCell.m in Sources */,

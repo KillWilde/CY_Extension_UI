@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^DatePickerAction)(NSString *_Nullable date);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CYDatePicker : UIView
 
+@property (nonatomic,copy) DatePickerAction datePickerAction;
+
 - (void)showInView:(UIView *)view;
+
+- (void)listenChoseDateAction:(DatePickerAction)action;
 
 @end
 
