@@ -395,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YG3T5AFNXY;
 				INFOPLIST_FILE = CY_Extension_UI/Info.plist;
@@ -404,6 +405,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "SaturdayNight.CY-Extension-UI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -412,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YG3T5AFNXY;
 				INFOPLIST_FILE = CY_Extension_UI/Info.plist;
@@ -421,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "SaturdayNight.CY-Extension-UI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
