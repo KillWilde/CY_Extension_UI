@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SqliteManager : NSObject
 
+- (void)prepareDB;
+
 @end
 
 NS_ASSUME_NONNULL_END
