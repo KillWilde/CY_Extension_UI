@@ -10,14 +10,19 @@
 #import "LeftTitleRightArrowCell.h"
 #import "ChoseTypeVC.h"
 #import "CYDatePicker.h"
+#import "SqliteManager.h"
 
 static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 
 @interface InputBillVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
-
+//日期选择器
 @property (nonatomic,strong) CYDatePicker *datePicker;
+//数据库操作管理
+@property (nonatomic,strong) SqliteManager *sqliteManager;
+//用于弹出输入键盘
+@property (nonatomic,strong) UITextField *tfInput;
 
 @end
 
@@ -136,7 +141,7 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 
 //MARK: - 导航栏右侧按钮点击
 - (void)btnRightClicked{
-    
+    [self.sqliteManager createTable:@"bill2019" typeName:[[self.dataSource objectAtIndex:0] objectForKey:@"data"] date:[[self.dataSource objectAtIndex:1] objectForKey:@"data"] money:[[self.dataSource objectAtIndex:2] objectForKey:@"data"] remarks:[[self.dataSource objectAtIndex:3] objectForKey:@"data"]];
 }
 
 - (void)segmentValueChanged:(UISegmentedControl *)sender{
@@ -162,6 +167,14 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
     }
     
     return _datePicker;
+}
+
+- (SqliteManager *)sqliteManager{
+    if (!_sqliteManager) {
+        _sqliteManager = [[SqliteManager alloc] init];
+    }
+    
+    return _sqliteManager;
 }
 
 @end

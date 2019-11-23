@@ -58,6 +58,53 @@
             </objects>
             <point key="canvasLocation" x="-972.46376811594212" y="683.70535714285711"/>
         </scene>
+        <!--List BillVC-->
+        <scene sceneID="fBK-z9-zWU">
+            <objects>
+                <viewController id="LIu-nR-EgG" customClass="ListBillVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZMd-OU-NnL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-pX-p8S">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iN7-RL-ZLp">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8PT-1U-zb6">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Odo-TF-Kew">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oJc-7P-FBs" firstAttribute="trailing" secondItem="0ct-pX-p8S" secondAttribute="trailing" id="8Rf-YP-mbi"/>
+                            <constraint firstItem="oJc-7P-FBs" firstAttribute="bottom" secondItem="0ct-pX-p8S" secondAttribute="bottom" id="UWz-QN-oMU"/>
+                            <constraint firstItem="0ct-pX-p8S" firstAttribute="leading" secondItem="oJc-7P-FBs" secondAttribute="leading" id="hHI-rv-Dt8"/>
+                            <constraint firstItem="0ct-pX-p8S" firstAttribute="top" secondItem="oJc-7P-FBs" secondAttribute="top" id="hxH-4n-WxC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oJc-7P-FBs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0WS-S9-dcc"/>
+                    <connections>
+                        <outlet property="list" destination="0ct-pX-p8S" id="sH3-ZG-3qS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1d9-SN-UuA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2300" y="2139.5089285714284"/>
+        </scene>
         <!--消费类型-->
         <scene sceneID="q7h-H3-BSp">
             <objects>
@@ -210,6 +257,7 @@
                     <navigationItem key="navigationItem" title="账单" id="a65-7O-Qxp"/>
                     <connections>
                         <outlet property="collectionList" destination="PeT-4A-lBJ" id="MJt-ad-6h7"/>
+                        <segue destination="LIu-nR-EgG" kind="show" identifier="GoListBillVC" id="HbG-rZ-wS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPb-wW-uW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

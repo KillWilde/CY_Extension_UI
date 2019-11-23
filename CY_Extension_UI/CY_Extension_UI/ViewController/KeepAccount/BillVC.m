@@ -73,7 +73,7 @@ static NSString *kCollectionViewCell = @"kCollectionViewCell";
     if (!_dataSource) {
         _dataSource = [NSMutableArray arrayWithCapacity:0];
         [_dataSource addObject:@{@"name":@"记账",@"image":@"shouxiejizhang",@"segue":@"GoInputBillVC"}];
-        [_dataSource addObject:@{@"name":@"查账",@"image":@"chazhang"}];
+        [_dataSource addObject:@{@"name":@"查账",@"image":@"chazhang",@"segue":@"GoListBillVC"}];
         [_dataSource addObject:@{@"name":@"智能管家",@"image":@"zhineng"}];
     }
     

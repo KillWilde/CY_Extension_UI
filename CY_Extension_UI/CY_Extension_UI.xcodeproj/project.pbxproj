@@ -12,6 +12,10 @@
 		6C9F03B5237664050077C817 /* ChoseTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03B4237664050077C817 /* ChoseTypeVC.m */; };
 		6C9F03B92376BA6C0077C817 /* CYDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03B82376BA6C0077C817 /* CYDatePicker.m */; };
 		6C9F03BD237928030077C817 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F03BC237928030077C817 /* NSDate+Extension.m */; };
+		6CBC6C132388C8090043B7FB /* ABill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBC6C122388C8090043B7FB /* ABill.m */; };
+		6CBC6C162388CC4F0043B7FB /* ListBillVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBC6C152388CC4F0043B7FB /* ListBillVC.m */; };
+		6CBC6C1A2388CD660043B7FB /* ListBillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBC6C182388CD660043B7FB /* ListBillCell.m */; };
+		6CBC6C1B2388CD660043B7FB /* ListBillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CBC6C192388CD660043B7FB /* ListBillCell.xib */; };
 		6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8122C237158DE00123DD5 /* AppDelegate.m */; };
 		6CE81230237158DE00123DD5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8122F237158DE00123DD5 /* SceneDelegate.m */; };
 		6CE81236237158DE00123DD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE81234237158DE00123DD5 /* Main.storyboard */; };
@@ -38,6 +42,13 @@
 		6C9F03B82376BA6C0077C817 /* CYDatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYDatePicker.m; sourceTree = "<group>"; };
 		6C9F03BB237928030077C817 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		6C9F03BC237928030077C817 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		6CBC6C112388C8090043B7FB /* ABill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABill.h; sourceTree = "<group>"; };
+		6CBC6C122388C8090043B7FB /* ABill.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABill.m; sourceTree = "<group>"; };
+		6CBC6C142388CC4F0043B7FB /* ListBillVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListBillVC.h; sourceTree = "<group>"; };
+		6CBC6C152388CC4F0043B7FB /* ListBillVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListBillVC.m; sourceTree = "<group>"; };
+		6CBC6C172388CD660043B7FB /* ListBillCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListBillCell.h; sourceTree = "<group>"; };
+		6CBC6C182388CD660043B7FB /* ListBillCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListBillCell.m; sourceTree = "<group>"; };
+		6CBC6C192388CD660043B7FB /* ListBillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBillCell.xib; sourceTree = "<group>"; };
 		6CE81228237158DE00123DD5 /* CY_Extension_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CY_Extension_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8122B237158DE00123DD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CE8122C237158DE00123DD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,6 +194,9 @@
 				6CE812852374340300123DD5 /* LeftTitleRightArrowCell.h */,
 				6CE812862374340300123DD5 /* LeftTitleRightArrowCell.m */,
 				6CE812872374340300123DD5 /* LeftTitleRightArrowCell.xib */,
+				6CBC6C172388CD660043B7FB /* ListBillCell.h */,
+				6CBC6C182388CD660043B7FB /* ListBillCell.m */,
+				6CBC6C192388CD660043B7FB /* ListBillCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -196,6 +210,10 @@
 				6CE812832374104400123DD5 /* InputBillVC.m */,
 				6C9F03B3237664050077C817 /* ChoseTypeVC.h */,
 				6C9F03B4237664050077C817 /* ChoseTypeVC.m */,
+				6CBC6C142388CC4F0043B7FB /* ListBillVC.h */,
+				6CBC6C152388CC4F0043B7FB /* ListBillVC.m */,
+				6CBC6C112388C8090043B7FB /* ABill.h */,
+				6CBC6C122388C8090043B7FB /* ABill.m */,
 			);
 			path = KeepAccount;
 			sourceTree = "<group>";
@@ -261,6 +279,7 @@
 				6CE812892374340300123DD5 /* LeftTitleRightArrowCell.xib in Resources */,
 				6CE8123B237158E300123DD5 /* LaunchScreen.storyboard in Resources */,
 				6CE81238237158E300123DD5 /* Assets.xcassets in Resources */,
+				6CBC6C1B2388CD660043B7FB /* ListBillCell.xib in Resources */,
 				6CE81236237158DE00123DD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,12 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CBC6C132388C8090043B7FB /* ABill.m in Sources */,
 				6CE8122D237158DE00123DD5 /* AppDelegate.m in Sources */,
 				6C9F03B5237664050077C817 /* ChoseTypeVC.m in Sources */,
 				6C9F03BD237928030077C817 /* NSDate+Extension.m in Sources */,
 				6C9C0CFF237D7D3300C0B327 /* SqliteManager.m in Sources */,
+				6CBC6C1A2388CD660043B7FB /* ListBillCell.m in Sources */,
 				6CE812812373FF3500123DD5 /* BillVC.m in Sources */,
 				6CE812882374340300123DD5 /* LeftTitleRightArrowCell.m in Sources */,
+				6CBC6C162388CC4F0043B7FB /* ListBillVC.m in Sources */,
 				6CE812752372E64700123DD5 /* CollectionViewCell.m in Sources */,
 				6CE812842374104400123DD5 /* InputBillVC.m in Sources */,
 				6CE8123E237158E300123DD5 /* main.m in Sources */,

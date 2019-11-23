@@ -1,14 +1,14 @@
 //
-//  LeftTitleRightArrowCell.m
+//  ListBillCell.m
 //  CY_Extension_UI
 //
-//  Created by Megatron on 2019/11/7.
+//  Created by Megatron on 2019/11/23.
 //  Copyright © 2019 SaturdayNight. All rights reserved.
 //
 
-#import "LeftTitleRightArrowCell.h"
+#import "ListBillCell.h"
 
-@implementation LeftTitleRightArrowCell
+@implementation ListBillCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
