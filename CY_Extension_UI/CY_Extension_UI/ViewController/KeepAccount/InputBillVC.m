@@ -14,7 +14,7 @@
 
 static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 
-@interface InputBillVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface InputBillVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate>
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
 //日期选择器
@@ -76,6 +76,8 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
     
     UINib *nib = [UINib nibWithNibName:NSStringFromClass([LeftTitleRightArrowCell class]) bundle:nil];
     [self.list registerNib:nib forCellWithReuseIdentifier:kLeftTitleRightArrowCell];
+    
+    [self.view addSubview:self.tfInput];
 }
 
 //MARK: - Delegate
@@ -108,6 +110,8 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
             [self.list reloadData];
         }];
         return;
+    }else if ([name isEqualToString:@"金额"]){
+        [self.tfInput becomeFirstResponder];
     }
     
     NSString *strSegue = [[self.dataSource objectAtIndex:indexPath.row] objectForKey:@"segue"];
@@ -141,11 +145,46 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
 
 //MARK: - 导航栏右侧按钮点击
 - (void)btnRightClicked{
+    [self.tfInput resignFirstResponder];
+    
     [self.sqliteManager createTable:@"bill2019" typeName:[[self.dataSource objectAtIndex:0] objectForKey:@"data"] date:[[self.dataSource objectAtIndex:1] objectForKey:@"data"] money:[[self.dataSource objectAtIndex:2] objectForKey:@"data"] remarks:[[self.dataSource objectAtIndex:3] objectForKey:@"data"]];
 }
 
 - (void)segmentValueChanged:(UISegmentedControl *)sender{
     
+}
+
+//MARK: - Delegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSLog(@"textField %@ string %@",textField.text,string);
+    
+    NSString *curText = textField.text;
+    if (string.length == 0) {
+        if (curText.length > 0) {
+            curText = [curText substringToIndex:(curText.length - 1)];
+            [self changeLoaclMoney:curText];
+            return YES;
+        }
+        return NO;
+    }else if ([string isEqualToString:@"."]){
+        if ([curText containsString:@"."]) {
+            return NO;
+        }
+        curText = [curText stringByAppendingString:@"."];
+        [self changeLoaclMoney:curText];
+        return YES;
+    }else{
+        curText = [curText stringByAppendingString:string];
+        [self changeLoaclMoney:curText];
+        return YES;
+    }
+}
+
+- (void)changeLoaclMoney:(NSString *)money{
+    NSMutableDictionary *dic = [[self.dataSource objectAtIndex:2] mutableCopy];
+    [dic setObject:money forKey:@"data"];
+    [self.dataSource replaceObjectAtIndex:2 withObject:dic];
+    [self.list reloadData];
 }
 
 //MARK: - LazyLoad
@@ -154,7 +193,7 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
         _dataSource = [NSMutableArray arrayWithCapacity:0];
         [_dataSource addObject:@{@"name":@"消费类型",@"data":@"午餐",@"segue":@"GoChoseTypeVC"}];
         [_dataSource addObject:@{@"name":@"日期",@"data":@"2019-10-31"}];
-        [_dataSource addObject:@{@"name":@"金额",@"data":@"26.5"}];
+        [_dataSource addObject:@{@"name":@"金额",@"data":@""}];
         [_dataSource addObject:@{@"name":@"备注",@"data":@"一个人吃"}];
     }
     
@@ -175,6 +214,16 @@ static NSString *const kLeftTitleRightArrowCell = @"kLeftTitleRightArrowCell";
     }
     
     return _sqliteManager;
+}
+
+- (UITextField *)tfInput{
+    if (!_tfInput) {
+        _tfInput = [[UITextField alloc] init];
+        _tfInput.delegate = self;
+        _tfInput.keyboardType = UIKeyboardTypeDecimalPad;
+    }
+    
+    return _tfInput;
 }
 
 @end

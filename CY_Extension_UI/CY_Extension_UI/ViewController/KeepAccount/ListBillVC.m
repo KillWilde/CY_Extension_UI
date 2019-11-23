@@ -25,6 +25,9 @@ static NSString *kListBillCell = @"kListBillCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //导航栏配置
+    self.navigationItem.title = @"详情";
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 1;
     layout.minimumInteritemSpacing = 0.5;
